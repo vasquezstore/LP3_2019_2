@@ -14,7 +14,7 @@ app.use('/inverter/:str', (req, res) => {
     let str = req.params.str;
     // Inverte a string
     str = str.split('').reverse().join('');
-    res.json(str);
+    res.json({resultado: str});
 });
 
 app.use('/cpf/:cpf', (req, res) => {
@@ -42,6 +42,4 @@ app.use('/cpf/:cpf', (req, res) => {
 });
 
 
-app.listen(3000,
-    () => console.log('Servidor iniciado')
-);
+module.exports = app;
